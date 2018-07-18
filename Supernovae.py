@@ -31,7 +31,7 @@ class Spectra:
         '''
         
         #correct flux for redshift, change wavelength to SN restframe, Normalize flux and store in Spectra
-        self.data= Unpack_Spectra(Spectra, z )
+        self.data= Unpack_Spectra(Spectra, z)
         
         #store epoch of obseravation
         self.epoch = float(epoch)
