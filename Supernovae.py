@@ -17,7 +17,7 @@ from Supernovae import *
 c = 3e5 
 
 
-#Define class to hold releveant informatin for spectra data
+#Define class to hold releveant information for spectra data
 class Spectra:
     
     #Initialization function
@@ -41,6 +41,11 @@ class Spectra:
 
 
 
+class Lightcurve():
+    
+    def __init__(self, times, fluxes,  error, band):
+        self.band = band
+        self.data = pd.DataFrame(list(zip(times, fluxes, error)), columns = ['times', 'flux', 'err'])
         
         
 #Create Supernovae class to store Spectral objects
@@ -66,7 +71,7 @@ class Supernovae(object):
         #initiate empty list to hold Spectra objects
         self.spectra = []
         
-   
+        self.lightcurves = []
     
    
     #define function to return spectra closest to given phase
@@ -101,7 +106,13 @@ class Supernovae(object):
         else:
             self.spectra.append(spectra_object)
             self.spectra.sort(key= lambda x: x.phase)
-        
+    
+    #define function to store lightcurve
+    def store_lightcurve(self, lightcurve_object):
+        if lightcurve_object in self.lightcurves:
+             print('already exists')
+        else:  
+            self.lightcurves.append(lightcurve_object)
       
         
     
