@@ -172,6 +172,7 @@ def correct_flux(flux_obs, z):
     '''
     flux_emit = (z * flux_obs) + flux_obs
     return flux_emit
+
 #Define function to get relevant spectra from OSN JSON data file
 def create_SN_object(JSON, MJD_max, z):
     '''
@@ -202,7 +203,6 @@ def create_SN_object(JSON, MJD_max, z):
     return supernovae
 
     
-
 #Define function to convert calendar date to MJD
 def convert_date_toMJD(date):
     '''
