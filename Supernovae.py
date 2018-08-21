@@ -119,7 +119,7 @@ class Supernovae(object):
     
     
 #define function that converts wavlengths to restframe and corrects flux for redshift, and normalizes flux
-def Unpack_Spectra(Spectra, z, normalization = [5000,5200]):
+def Unpack_Spectra(Spectra, z, normalization = [5000,6000]):
     '''
     Args:
     Spectra  - one epoch of spectral data in JSON format from OSN
@@ -205,7 +205,7 @@ def create_SN_object(JSON, MJD_max, z):
     spectra_data = np.array(spectra_data)
    
     for i in range(len(spectra_data)):
-        spectra = Spectra(spectra_data[i]['data'], spectra_data[i]['time'], z, MJD_max)
+        spectra = Spectra(spectra_data[i]['data'], float(spectra_data[i]['time']) / (1+z), z, MJD_max)
         if spectra.data is None:
             continue
         else:
