@@ -41,7 +41,7 @@ Absorption velocities were measured using the centroid of the Gaussian fits at -
 % \end{figure}
 
 \section{Photometry}
-Photometry ranging from -13 to +30 days were obtained for iPTF16hvw in the SDSS u, g, r and i bands. We used the sncosmo software package to generate simulated photometric data for SN2011fe in the SDSS u, g, r and i bands, and used this data to compare iPTF16hvw and SN2011fe color evolution. We also fit the P60 light curves using the SALT2 template (Guy et al. 2007). Because SALT2 performs poorly at early times, we excluded observations at phases less than -10 d. The SALT2 fit reports the time of rest-frame B-band maximum to be MJDmax = 57,714.380 $\pm$ 0.060, the coefficient of the zeroth principle component $x_{0}$ = 0.001793 $\pm$ .000026, the coefficient of the first principle component $x_{1}$ = 0.07 $\pm$ 0.11, and the color term c = 0.2122 $\pm$  0.0095.
+Photometry ranging from -13 to +30 days were obtained for iPTF16hvw in the SDSS u, g, r and i bands. We used the sncosmo software package to generate simulated photometric data for SN2011fe in the SDSS u, g, r and i bands, and used this data to compare iPTF16hvw and SN2011fe color evolution. We also fit the P60 light curves using the SALT2 template (Guy et al. 2007). Because SALT2 performs poorly at early times, we excluded observations at phases below -10 d. The SALT2 fit reports the time of rest-frame B-band maximum to be MJDmax = 57,714.380 $\pm$ 0.060, the coefficient of the zeroth principle component $x_{0}$ = 0.001793 $\pm$ .000026, the coefficient of the first principle component $x_{1}$ = 0.07 $\pm$ 0.11, and the color term c = 0.2122 $\pm$  0.0095. 
 We modeled the early light curve as a power law,
 \begin{equation}
 f(t) = \left\{
@@ -52,6 +52,5 @@ f(t) = \left\{
     \right.
 \end{equation}
 
-where $t_{0}$ is the time of first light, $\alpha$ is the power law index, and $t$ is the time measured in the SN restframe. Assuming Gaussian uncertainties between the data and model, we used the software package emcee to search the parameter space for the best fits in both the g and R bands.  
-
+where $t_{0}$ is the time of first light, $\alpha$ is the power law index, and $t$ is the time measured in the SN restframe.  Assuming Gaussian uncertainties between the data and model, we used the software package emcee to sample the posterior parameter space for the best fit $t_{0}$  and $\alpha$ parameters in both the g and R bands. We have reason to believe (include specifics) the flux uncertainties are undervalued, so we also included an additional uncertainty parameter in the likelihood. We used wide, flat priors on all of the parameters. Unfortunately, the limited amount of early photometric data we have at our disposal led to a degeneracy between $t_{0}$ , $\alpha$ , and b, and the inability to constrain the b parameter. Despite extremely high b values and b values extremely close to 0 being unlikely, the sampler searched posterior values for b ranging from 0 to 750.  Without the ability to constrain b, we are unable to properly constrain $t_{0}$  or  $\alpha$. However, emcee still allows us to marginalize $t_{0}$ and $\alpha$ over the distributions of the other parameters. Marginalization gave us values for  $t_{0}$ and $\alpha$ of (put values here).
 \end{document}
