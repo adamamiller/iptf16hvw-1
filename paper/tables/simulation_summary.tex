@@ -1,0 +1,21 @@
+\begin{deluxetable}{c}
+\tabletypesize{\footnotesize}
+\tablecolumns{}
+\tablewidth{0pt}
+\tablecaption{Simulation Results\label{tbl:sims}}
+\tablehead{
+\colhead{Model} & \colhead{parameter} & \colhead{median\tablenotemark{a}} & \colhead{CR$_{68}$\tablenotemark{b}} & \colhead{CR$_{95}$\tablenotemark{c}}
+} 
+%
+\startdata
+multirow{3}{*}{$\sigma_\mathrm{back} = 8$} & $t_\mathrm{det}$ & $1.72\pm^{0.45}_{0.28}$ & $\ldots$ & $\ldots$ \\
+ & $t_0$ & $0.11\pm^{0.41}_{0.33}$ & 68 & 93 \\
+ & $\alpha$ & $1.90\pm^{0.39}_{0.29}$ & 64 & 95 \\
+%
+\hline
+\enddata
+\tablecomments{Fiducial models with $\sigma_\mathrm{back} = 8$, 50, and 317 roughly correspond to telescopes with $5\sigma$ detection limits corresponding to $m_\mathrm{lim} \approx 21$, 19, and 17\,mag, respectively. For each model, 100 simulations were run with aggregated results reported here.}
+\tablenotetext{a}{Median of the marginalized median values from the simulations. The uncertainties represent the inner $68^{\mathrm{th}}$ percentile of the marginalized median values.}
+\tablenotetext{b}{Percentage of simulations where the 1-d marginalized 68\% credible region includes the simulation input value.}
+\tablenotetext{c}{Percentage of simulations where the 1-d marginalized 95\% credible region includes the simulation input value.}
+ \end{deluxetable}
